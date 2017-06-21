@@ -1,0 +1,13 @@
+<h1>Startae Twitter Feed</h1>
+
+<ul>
+
+<% TwitterApi.get_five_tweets('netflix').each do |tweet| %>
+  <li>
+      <%= tweet.text %>
+      <span><%= time_ago_in_words(tweet.created_at) %> ago</span>
+  </li>
+
+<% end %>
+
+</ul>

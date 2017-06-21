@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h2>Startae Team</h2>
+<p>
+  <strong>Username:</strong>
+  <%= @account.username %>
+
+
+</p>
+
+  <% TwitterApi.get_five_tweets(@account.username).each do |tweet| %>
+  <li>
+  <%= tweet.text %>
+  <span><%= time_ago_in_words(tweet.created_at) %> ago</span>
+  </li>
+  <% end %>
+
+<%= link_to 'Back', accounts_path %>
