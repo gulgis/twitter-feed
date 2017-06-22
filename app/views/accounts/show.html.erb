@@ -14,12 +14,11 @@
                 <p><small class="text-muted"><i class="glyphicon glyphicon-time"><span> <%= time_ago_in_words(tweet.created_at) %> ago</span></i></small></p>
 
               <div class="timeline-body">
-                <%= tweet.text %>
+                <%= parsed_tweet tweet %>
               </div>
             </div>
           </li>
       </ul>
     <% end %>
 </div>
-
-<%= link_to 'Back', accounts_path %>
+<h3><span>  <%= link_to 'Back', accounts_path %></span></h3>

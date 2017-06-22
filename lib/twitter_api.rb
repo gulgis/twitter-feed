@@ -2,6 +2,9 @@ class TwitterApi
   def self.get_five_tweets(username)
     client.user_timeline(username, count: 5, exclude_relplies: true, include_rts: false)
   end
+  def self.get_latest_tweet(username)
+    client.user_timeline(username, count: 1, exclude_relplies: true, include_rts: false)
+  end
 
   def self.client
     @client ||= Twitter::REST::Client.new do |config|
